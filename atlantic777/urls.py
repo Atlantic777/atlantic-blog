@@ -20,6 +20,7 @@ urlpatterns = patterns('',
    url(r'^wiki/$', wiki),
    url(r'^comments/', include('django.contrib.comments.urls')),
    url(r'^pages/', include('django.contrib.flatpages.urls')),
+   url(r'^$', index),
 )
 
 urlpatterns+= patterns('django.contrib.flatpages.views',
