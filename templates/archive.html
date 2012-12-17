@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<ul>
+{% for post in object_list %}
+<li>
+<span id=arch_date> {{ post.created|date:"d-m-Y" }}</span>
+<span id=arch_title><a href="/blog/{{post.id}}">{{ post.title }}</a></span>
+</li>
+{%endfor%}
+</ul>
+
+{% endblock %}

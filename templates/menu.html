@@ -1,0 +1,6 @@
+<div id=menu>
+{% for item in menu %}
+	<a href="/{{item|lower|urlencode}}/">{{item}}</a>
+	{%if not forloop.last %} + {% endif %}
+{% endfor %}
+</div>

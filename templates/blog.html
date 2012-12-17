@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block contents %}
+
+<div id=archive><a href="/blog/archive">Archive</a></div>
+
+{% for post in object_list %}
+<div id=post_title><a href="/blog/{{post.id}}">{{ post.title }}</a></div>
+<div id=post_date> {{ post.created }}</div>
+<div id=post_text> {{ post.text|truncatewords:50|safe }} </div>
+{%endfor%}
+
+{% endblock %}

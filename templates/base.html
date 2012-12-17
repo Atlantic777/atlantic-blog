@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title> 
+			{% block title %} Atlantic777 weblog and stuff!  {% endblock %} 
+		</title>
+	
+		<link rel="stylesheet" href="/static/body.css" />
+	</head>
+
+	<body>
+	<div id=block>
+		{%include "header.html"%}
+		{%include "menu.html" %}
+		
+		<div id="contents">
+		{% block contents %} {% endblock %}
+		</div>
+
+		{%include "footer.html"%}
+	</div>
+	</body>
+</html>
