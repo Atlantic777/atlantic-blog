@@ -13,3 +13,10 @@ In case you want to test this code, run following commands:
 ```
 
 And you'll have a working test server on http://localhost:[port]
+Next, you'll have to install some django deps.
+
+## Dependencies
+
+```
+pip install django-taggit
+```
