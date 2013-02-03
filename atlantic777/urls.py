@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from views import index, wiki
+from views import index, wiki, login_page, logout_page
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -20,6 +20,8 @@ urlpatterns = patterns('',
    url(r'^wiki/$', wiki),
    url(r'^comments/', include('django.contrib.comments.urls')),
    url(r'^pages/', include('django.contrib.flatpages.urls')),
+   url(r'^login/', login_page),
+   url(r'^logout/', logout_page),
    url(r'^$', index),
 )
 
