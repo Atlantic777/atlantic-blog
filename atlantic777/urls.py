@@ -1,9 +1,15 @@
 from django.conf.urls import patterns, include, url
 from views import index, wiki, login_page, logout_page
+from blog.api import PostResource, UserResource
+from tastypie.api import Api
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+v1_api =  Api(api_name='v1')
+v1_api.register(UserResource())
+v1_api.register(PostResource())
 
 urlpatterns = patterns('',
     # Examples:
@@ -22,6 +28,7 @@ urlpatterns = patterns('',
    url(r'^pages/', include('django.contrib.flatpages.urls')),
    url(r'^login/', login_page),
    url(r'^logout/', logout_page),
+   url(r'^api/', include(v1_api.urls)),
    url(r'^$', index),
 )
 
